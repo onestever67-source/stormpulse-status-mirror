@@ -1,0 +1,3 @@
+StormPulse public read-only status mirror.
+Machine-readable data: status.json
+This mirror is refreshed by GitHub Actions and intentionally excludes fields with sensitive-looking names.
