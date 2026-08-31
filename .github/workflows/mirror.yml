@@ -1,0 +1,72 @@
+name: Mirror StormPulse status
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stormpulse-status-mirror
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mirror repository
+        uses: actions/checkout@v4
+
+      - name: Fetch and sanitize public StormPulse status
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docs
+
+          curl --fail --silent --show-error --location \
+            --retry 3 --retry-delay 2 \
+            --connect-timeout 15 --max-time 45 \
+            'https://soft-cake-2e0a.onestever67.workers.dev/status.json' \
+            -o /tmp/stormpulse-status.raw.json
+
+          jq -e . /tmp/stormpulse-status.raw.json >/dev/null
+
+          # Defense in depth: the Worker endpoint is already read-only and allowlisted,
+          # but the public mirror strips any future field whose NAME looks sensitive.
+          jq '
+            def sensitive_key:
+              test("(?i)(^|_)(secret|token|password|credential|authorization|cookie|private|api.?key|vapid|subscription|endpoint|email|phone|account|user)(_|$)");
+            def scrub:
+              if type == "object" then
+                with_entries(select((.key | sensitive_key) | not) | .value |= scrub)
+              elif type == "array" then
+                map(scrub)
+              else
+                .
+              end;
+            scrub
+          ' /tmp/stormpulse-status.raw.json > docs/status.json
+
+          jq -e . docs/status.json >/dev/null
+
+          cat > docs/status.txt <<'EOF'
+          StormPulse public read-only status mirror.
+          Machine-readable data: status.json
+          This mirror is refreshed by GitHub Actions and intentionally excludes fields with sensitive-looking names.
+          EOF
+
+      - name: Commit mirror only when changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'stormpulse-status-mirror-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs/status.json docs/status.txt
+          if git diff --staged --quiet; then
+            echo 'No mirror changes to commit.'
+            exit 0
+          fi
+          git commit -m 'chore: refresh StormPulse status mirror'
+          git push
