@@ -1,42 +1,42 @@
 {
   "schemaVersion": "stormpulse-status/v1",
   "readOnly": true,
-  "version": "2.0.3+technical.5.1",
-  "generatedAt": "2026-09-01T13:48:54.000Z",
+  "version": "2.0.3+technical.5.2",
+  "generatedAt": "2026-09-01T14:00:38.000Z",
   "location": {
     "name": "Рівне",
     "timeZone": "Europe/Kyiv"
   },
   "ready": true,
   "lastSuccessfulServerCycle": {
-    "startedAt": "2026-09-01T13:47:17.000Z",
-    "completedAt": "2026-09-01T13:47:18.000Z",
+    "startedAt": "2026-09-01T13:52:26.000Z",
+    "completedAt": "2026-09-01T13:52:27.000Z",
     "status": "degraded",
     "trigger": "manual",
     "scheduler": null,
-    "release": "2.0.3+technical.5.1",
+    "release": "2.0.3+technical.5.2",
     "push": {
-      "accepted": 2,
+      "accepted": 0,
       "failed": 0
     }
   },
   "server": {
     "currentCycle": {
-      "startedAt": "2026-09-01T13:47:17.000Z",
-      "completedAt": "2026-09-01T13:47:18.000Z",
-      "status": "degraded",
-      "trigger": "manual",
-      "scheduler": null,
+      "startedAt": "2026-09-01T14:00:36.000Z",
+      "completedAt": null,
+      "status": "running",
+      "trigger": "scheduled",
+      "scheduler": "alarm",
       "release": null,
       "push": {
-        "accepted": 2,
+        "accepted": 0,
         "failed": 0
       }
     },
     "lastScheduledCycle": {
-      "startedAt": "2026-09-01T13:40:36.000Z",
-      "completedAt": "2026-09-01T13:40:37.000Z",
-      "status": "degraded",
+      "startedAt": "2026-09-01T14:00:36.000Z",
+      "completedAt": null,
+      "status": "running",
       "trigger": "scheduled",
       "scheduler": "alarm",
       "release": null,
@@ -47,13 +47,13 @@
     },
     "monitor": {
       "enabled": true,
-      "nextCycleAt": "2026-09-01T13:50:36.000Z",
+      "nextCycleAt": "2026-09-01T14:10:36.000Z",
       "intervalMinutes": 10
     }
   },
   "conclusion": {
-    "updatedAt": "2026-09-01T13:47:17.000Z",
-    "validUntil": "2026-09-01T14:00:00.000Z",
+    "updatedAt": "2026-09-01T13:52:26.000Z",
+    "validUntil": "2026-09-01T14:05:00.000Z",
     "level": "high",
     "title": "⚡ Грозова активність уже в районі Рівного",
     "nearestThreeHours": {
@@ -73,8 +73,8 @@
       "movement": "steady",
       "intensity": "strengthening",
       "startedAt": "2026-09-01T13:35:00.000Z",
-      "lastObservedAt": "2026-09-01T13:40:00.000Z",
-      "evaluatedAt": "2026-09-01T13:47:17.000Z"
+      "lastObservedAt": "2026-09-01T13:45:00.000Z",
+      "evaluatedAt": "2026-09-01T13:52:26.000Z"
     },
     "limitations": [
       "Блискавки: лише супутникові зображення із затримкою; окремі удари та повнота не підтверджені.",
@@ -87,7 +87,7 @@
     "sourceStatus": "ok",
     "sourceFresh": true,
     "complete": true,
-    "checkedAt": "2026-09-01T13:47:17.000Z",
+    "checkedAt": "2026-09-01T13:52:26.000Z",
     "dataUpdatedAt": "2026-09-01T13:36:15.009Z",
     "counts": {
       "active": 1,
@@ -113,7 +113,7 @@
         "name": "DWD ICON",
         "family": "DWD",
         "status": "ok",
-        "checkedAt": "2026-09-01T13:47:17.000Z",
+        "checkedAt": "2026-09-01T13:52:26.000Z",
         "dataUpdatedAt": null,
         "limitation": "Час запуску моделі API не повідомляє; checkedAt — час отримання.",
         "nativeStepHours": 1
@@ -123,7 +123,7 @@
         "name": "NOAA GFS",
         "family": "NOAA",
         "status": "ok",
-        "checkedAt": "2026-09-01T13:47:17.000Z",
+        "checkedAt": "2026-09-01T13:52:26.000Z",
         "dataUpdatedAt": null,
         "limitation": "Час запуску моделі API не повідомляє; checkedAt — час отримання.",
         "nativeStepHours": 1
@@ -133,7 +133,7 @@
         "name": "ECMWF IFS",
         "family": "ECMWF",
         "status": "ok",
-        "checkedAt": "2026-09-01T13:47:17.000Z",
+        "checkedAt": "2026-09-01T13:52:26.000Z",
         "dataUpdatedAt": null,
         "limitation": "Час запуску моделі API не повідомляє; checkedAt — час отримання.",
         "nativeStepHours": 3
@@ -144,7 +144,7 @@
       "name": "УкрГМЦ · MeteoAlarm",
       "family": null,
       "status": "ok",
-      "checkedAt": "2026-09-01T13:47:17.000Z",
+      "checkedAt": "2026-09-01T13:52:26.000Z",
       "dataUpdatedAt": "2026-09-01T13:36:15.009Z",
       "limitation": "Перевірено весь доступний індекс України й повні CAP-записи для Рівного. Строк попередження не є часом фактичної грози. Публікації поза MeteoAlarm можуть відрізнятися.",
       "nativeStepHours": null
@@ -154,8 +154,8 @@
       "name": "RainViewer",
       "family": null,
       "status": "partial",
-      "checkedAt": "2026-09-01T13:47:17.000Z",
-      "dataUpdatedAt": "2026-09-01T13:40:00.000Z",
+      "checkedAt": "2026-09-01T13:52:26.000Z",
+      "dataUpdatedAt": "2026-09-01T13:50:00.000Z",
       "limitation": "Час кадру — час створення композиту, не точний час усіх вимірів.",
       "nativeStepHours": null,
       "coverageFraction": 0,
@@ -167,15 +167,15 @@
       "name": "EUMETSAT · супутникові блискавки",
       "family": null,
       "status": "partial",
-      "checkedAt": "2026-09-01T13:47:17.000Z",
-      "dataUpdatedAt": "2026-09-01T13:40:00.000Z",
+      "checkedAt": "2026-09-01T13:52:26.000Z",
+      "dataUpdatedAt": "2026-09-01T13:45:00.000Z",
       "limitation": "Відкриті спостереження EUMETSAT LI AFA, із затримкою публікації. Аналізується супутникове зображення в межах приблизно 30 км, не журнал наземних ударів.",
       "nativeStepHours": null,
       "mode": "satellite-area",
       "areaSignal": true,
       "eventCount": 0,
-      "windowFrom": "2026-09-01T13:25:00.000Z",
-      "windowTo": "2026-09-01T13:40:00.000Z",
+      "windowFrom": "2026-09-01T13:30:00.000Z",
+      "windowTo": "2026-09-01T13:45:00.000Z",
       "coverageGap": true,
       "observationLimit": "Оптична активність верхівок хмар на 5-хвилинних зображеннях LI AFA. Пікселі не є окремими ударами; точні координати й кількість не визначаються. Порожнє зображення не доводить відсутності блискавок."
     },
@@ -184,7 +184,7 @@
       "name": "EUMETSAT · супутниковий nowcast",
       "family": null,
       "status": "ok",
-      "checkedAt": "2026-09-01T13:47:17.000Z",
+      "checkedAt": "2026-09-01T13:52:26.000Z",
       "dataUpdatedAt": "2026-09-01T13:15:00.000Z",
       "limitation": "Відкрита локальна вибірка EUMETSAT RDT за останні 45 хвилин. Це супутниковий nowcast конвективних хмар, не радар і не журнал блискавок.",
       "nativeStepHours": null,
@@ -192,8 +192,8 @@
       "complete": true,
       "cellCount": 1,
       "nearestCellKm": 110,
-      "windowFrom": "2026-09-01T13:02:17.000Z",
-      "windowTo": "2026-09-01T13:47:17.000Z",
+      "windowFrom": "2026-09-01T13:07:26.000Z",
+      "windowTo": "2026-09-01T13:52:26.000Z",
       "observationLimit": "RDT виявляє та відстежує конвективні хмарні осередки за супутниковими даними. Осередок не є підтвердженою грозою; напрямок на Рівне та час прибуття не розраховуються."
     }
   },
@@ -201,12 +201,70 @@
     "state": "configured",
     "configured": true,
     "lastCycle": {
-      "accepted": 2,
+      "accepted": 0,
       "failed": 0
     },
     "limitation": "Показано лише стан каналу та зведені лічильники останнього циклу. Персональні підписки й адреси доставки не публікуються."
   },
   "recentErrorsAndDegradations": [
+    {
+      "startedAt": "2026-09-01T13:52:26.000Z",
+      "completedAt": "2026-09-01T13:52:27.000Z",
+      "status": "degraded",
+      "trigger": "manual",
+      "scheduler": null,
+      "release": "2.0.3+technical.5.2",
+      "push": {
+        "accepted": 0,
+        "failed": 0
+      },
+      "summary": "Цикл завершився з обмеженнями джерел.",
+      "sourceIssues": [
+        {
+          "source": "rainviewer",
+          "status": "partial",
+          "dataUpdatedAt": "2026-09-01T13:50:00.000Z",
+          "complete": null,
+          "coverageFraction": 0
+        },
+        {
+          "source": "eumetsat-li",
+          "status": "partial",
+          "dataUpdatedAt": "2026-09-01T13:45:00.000Z",
+          "complete": null,
+          "coverageFraction": null
+        }
+      ]
+    },
+    {
+      "startedAt": "2026-09-01T13:50:36.000Z",
+      "completedAt": "2026-09-01T13:50:38.000Z",
+      "status": "degraded",
+      "trigger": "scheduled",
+      "scheduler": "alarm",
+      "release": "2.0.3+technical.5.1",
+      "push": {
+        "accepted": 0,
+        "failed": 0
+      },
+      "summary": "Цикл завершився з обмеженнями джерел.",
+      "sourceIssues": [
+        {
+          "source": "rainviewer",
+          "status": "partial",
+          "dataUpdatedAt": "2026-09-01T13:50:00.000Z",
+          "complete": null,
+          "coverageFraction": 0
+        },
+        {
+          "source": "eumetsat-li",
+          "status": "partial",
+          "dataUpdatedAt": "2026-09-01T13:45:00.000Z",
+          "complete": null,
+          "coverageFraction": null
+        }
+      ]
+    },
     {
       "startedAt": "2026-09-01T13:47:17.000Z",
       "completedAt": "2026-09-01T13:47:18.000Z",
@@ -289,64 +347,6 @@
           "source": "eumetsat-li",
           "status": "partial",
           "dataUpdatedAt": "2026-09-01T13:25:00.000Z",
-          "complete": null,
-          "coverageFraction": null
-        }
-      ]
-    },
-    {
-      "startedAt": "2026-09-01T13:30:36.000Z",
-      "completedAt": "2026-09-01T13:30:47.000Z",
-      "status": "degraded",
-      "trigger": "scheduled",
-      "scheduler": "alarm",
-      "release": "2.0.3+technical.4.2",
-      "push": {
-        "accepted": 0,
-        "failed": 0
-      },
-      "summary": "Цикл завершився з обмеженнями джерел.",
-      "sourceIssues": [
-        {
-          "source": "rainviewer",
-          "status": "partial",
-          "dataUpdatedAt": "2026-09-01T13:30:00.000Z",
-          "complete": null,
-          "coverageFraction": 0
-        },
-        {
-          "source": "eumetsat-li",
-          "status": "partial",
-          "dataUpdatedAt": "2026-09-01T13:25:00.000Z",
-          "complete": null,
-          "coverageFraction": null
-        }
-      ]
-    },
-    {
-      "startedAt": "2026-09-01T13:20:36.000Z",
-      "completedAt": "2026-09-01T13:20:47.000Z",
-      "status": "degraded",
-      "trigger": "scheduled",
-      "scheduler": "cron",
-      "release": "2.0.3+technical.4.2",
-      "push": {
-        "accepted": 0,
-        "failed": 0
-      },
-      "summary": "Цикл завершився з обмеженнями джерел.",
-      "sourceIssues": [
-        {
-          "source": "rainviewer",
-          "status": "partial",
-          "dataUpdatedAt": "2026-09-01T13:20:00.000Z",
-          "complete": null,
-          "coverageFraction": 0
-        },
-        {
-          "source": "eumetsat-li",
-          "status": "partial",
-          "dataUpdatedAt": "2026-09-01T13:15:00.000Z",
           "complete": null,
           "coverageFraction": null
         }
